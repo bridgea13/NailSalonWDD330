@@ -1,0 +1,15 @@
+{
+  "name": "nailsalonwdd330",
+  "version": "1.0.0",
+  "description": "WDD330 Class project Nail Salon",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AABRIDGE",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
