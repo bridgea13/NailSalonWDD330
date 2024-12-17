@@ -6,29 +6,31 @@
         <h1>Appointments</h1>
         <p>Well done on deciding to pamper yourself.<br> Click on the calendar below for your desired day and time.</p>
 </div>
-<h1>Book an Appointment</h1>
+<div class="booking-container">
+    <h1>Book an Appointment</h1>
 
-    <% if (message) { %>
-        <p style="color: green;"><%= message %></p>
-    <% } %>
+        <% if (message) { %>
+            <p style="color: #418978;"><%= message %></p>
+        <% } %>
 
-    <% if (error) { %>
-        <p style="color: red;"><%= error %></p>
-    <% } %>
+        <% if (error) { %>
+            <p style="color: rgb(30, 81, 77);"><%= error %></p>
+        <% } %>
 
-    <form action="/appointments" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
+        <div class="bookingForm"><form action="/appointments" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
 
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required><br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br><br>
 
-        <label for="time">Time:</label>
-        <input type="time" id="time" name="time" required><br>
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required><br>
 
-        <button type="submit">Submit</button>
-    </form>
+            <button type="submit">Submit</button>
+        </form></div>
+</div>
 <%- include('partials/footer') %>

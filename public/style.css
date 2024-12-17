@@ -181,6 +181,47 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for 3D effect */
   }
 
+  .booking-container {
+    background-color: rgb(244, 237, 237);
+    width: 80%; /* Set the width of the box */
+    max-width: 1200px; /* Optional: max width to avoid stretching too wide */
+    margin: 20px auto; /* Centering the box */
+    padding: 20px; /* Adding space inside the box */
+    border: 2px solid #ccc; /* Border around the box */
+    border-radius: 8px; /* Optional: rounded corners */ 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for 3D effect */
+  }
+
+  .bookingForm {
+    background-color: rgb(244, 237, 237);
+    width: 80%; /* Set the width of the box */
+    max-width: 1200px; /* Optional: max width to avoid stretching too wide */
+    margin: 20px auto; /* Centering the box */
+    padding: 20px; /* Adding space inside the box */
+    border: 2px solid #ccc; /* Border around the box */
+    border-radius: 8px; /* Optional: rounded corners */ 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for 3D effect */
+  }
+
+  .nailContainer {
+    background-color: rgb(244, 237, 237);
+    width: 80%; /* Set the width of the box */
+    max-width: 1200px; /* Optional: max width to avoid stretching too wide */
+    margin: 20px auto; /* Centering the box */
+    padding: 20px; /* Adding space inside the box */
+    border: 2px solid #ccc; /* Border around the box */
+    border-radius: 8px; /* Optional: rounded corners */ 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for 3D effect */
+    list-style-type: none;
+    font-weight: bold;
+  }
+
+  ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;            /* Remove default padding */
+    margin: 0;             /* Remove default margin */
+}
+
   /* Header Section */
   header  {
     background-color: #418978;
@@ -278,6 +319,14 @@
   font-size: 18px;
   color: #666;
   margin-top: 10px;
+}
+
+/* Style for the image */
+.service-item img {
+  
+  width: 100px; /* Adjust the size of the image */
+  height: auto;
+  margin-right: 20px; 
 }
 
 /* Hover effect for the boxes */

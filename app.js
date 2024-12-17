@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const fs = require("fs");
 const { google } = require('googleapis');
 const bodyParser = require('body-parser');
 require('dotenv').config();
@@ -9,6 +10,9 @@ require('dotenv').config();
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true })); // For form submissions
 app.use(express.json()); // Parse JSON data
+
+app.use(express.static(path.join(__dirname, 'public')));// Serve static files like images, CSS, JavaScript
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views")); // Set the views folder location
 
@@ -26,10 +30,10 @@ const calendar = google.calendar({ version: "v3", auth: oAuth2Client });
 // Routes
 app.get("/home", function (req, res) {
     const services = [
-        { generalServices: "Natural Nail Services", priceRange: "$15-$30" },
-        { generalServices: "Nail Enhancement Services", priceRange: "$20-$100" },
-        { generalServices: "Nails for Kids", priceRange: "$10-$30" },
-        { generalServices: "Waxing Services", priceRange: "$5-$30" },
+        { generalServices: "Natural Nail Services", priceRange: "$15-$30", image: "./images/natural-nails.jpg"},
+        { generalServices: "Nail Enhancement Services", priceRange: "$20-$100", image: "/images/nail-enhancement.jpg" },
+        { generalServices: "Nails for Kids", priceRange: "$10-$30", image: "/images/kids-nails.jpg" },
+        { generalServices: "Waxing Services", priceRange: "$5-$30", image: "/images/waxing-services.jpg" },
     ];
     res.render("home", { servicesList: services });
 });
@@ -47,7 +51,7 @@ app.get("/appointments", function (req, res) {
 });
 
 // Handle Appointment Form Submission
-app.post("/api/appointments", async (req, res) => {
+app.post("/appointments", async (req, res) => {
     const { name, email, date, time } = req.body;
 
     // Prepare event details
@@ -80,6 +84,27 @@ app.post("/api/appointments", async (req, res) => {
         console.error("Error creating event:", error.message);
         res.render("appointments", { error: "Error creating appointment. Please try again.", message: null });
     }
+});
+
+// Handle form submissions
+app.post("/submit", (req, res) => {
+    const { name, email, message } = req.body;
+
+    // Define the CSV file path
+    const csvFilePath = path.join(__dirname, "messages.csv");
+
+    // Prepare the data to be written to the CSV
+    const csvRow = `${name},${email},${message}\n`;
+
+    // Append the form data to the CSV file
+    fs.appendFile(csvFilePath, csvRow, (err) => {
+        if (err) {
+            console.error("Error writing to CSV file:", err);
+            return res.status(500).send("Something went wrong! Please try again later.");
+        }
+        console.log("Form data saved to CSV file.");
+        res.redirect("/home");
+    });
 });
 
 // Catch-All Route for Errors

@@ -14,8 +14,9 @@
             <div class="services-container">
              <% for (var i = 0; i < servicesList.length; i++) { %>
                 <div class="service-item">
+                    <img src="<%= servicesList[i].image %>" alt="<%= servicesList[i].generalServices %>" class="service-image">
                     <h4><%= servicesList[i].generalServices %></h4>
-                    <h5>Price Range: <%= servicesList[i].priceRange %></h5>
+                    <h5>Price Range: <%= servicesList[i].priceRange %></h5>                   
                 </div>
                 <% } %>
             </div>           
