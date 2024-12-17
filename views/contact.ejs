@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Nailed It / Contact Us</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <h1>Let's Chat</h1>
-        <h3>Send Us A Message</h3>
-        <p>We're here to help you look and feel your best! We would love to hear from you so reach out to us with any questions, comments, or even a "Good Job!" to your tech. <br>
-        Fill out the form below and someone will reply back to you within twenty four hours.</p>
-        <div><form action="/submit" method="POST">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Your Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            
-            <button type="submit">Send Message</button>
-          </form></div>
-        <h3>Contact Us</h3>
-        <p>We know live is crazy so feel free to reach out in any way, you can even text us!</p>
-        <p>Phone: 910-520-5555<br>
-        Email: naileditsalon@google.com<br>
-        Address: 123 Beauty Street, Gorg, NC, 25545</p>
 
+<%- include('partials/header') %>
+<div class="chat-container">   
+    <h1>Let's Chat</h1>    
+    <p>We're here to help you look and feel your best! <br>We would love to hear from you <br>so reach out to us with any questions or comments. <br>
+    Fill out the form below and someone will reply back to you within twenty four hours.</p>
+    <div class="messageForm-container"><form action="/submit" method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
 
+<div class="info-container">  
+    <h3>Contact Us</h3>
+    <p>We know life is crazy so feel free to reach out in any way, you can even text us!</p>
+    <p>Phone: 910-520-5555<br>
+    Email: naileditsalon@google.com<br>
+    Address: 123 Beauty Street, Gorg, NC, 25545</p>
+</div>
 
-        <h3>Visit Us</h3>
-        <p>Our salon is located in the heart of the city, with easy parking and a relaxing atmosphere waiting for you. Come in and unwind with a refreshing manicure or pedicure!</p>
-        <div id="map">
-            <!-- You can embed a Google map here -->
-        </div>
-    </body>
-</html>
+<div class="visit-container">  
+    <h3>Visit Us</h3>
+    <p>Our salon is located in the heart of the city, with easy parking and a relaxing atmosphere waiting for you. Come in and unwind with a refreshing manicure or pedicure!</p>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.2423540458344!2d-78.82581728118416!3d35.64042778839514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac8e10d0d4648f%3A0x6ec5aeac659536c5!2sGorges%20Park%20Dr!5e0!3m2!1sen!2sus!4v1734239314696!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+<%- include('partials/footer') %>
