@@ -16,16 +16,16 @@
 
   * {
     box-sizing: border-box;
-    background-image: ;
+    
   }
 
    body {
-    background-image: url('https://images.unsplash.com/photo-1522383225653-ed111181a951?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hlcnJ5JTIwYmxvc3NvbXxlbnwwfHwwfHx8MA%3D%3D');
+    background-image: url('images/cherryBackground.jpg');
     background-size: cover;   /* Ensures the image covers the whole screen */
     background-position: center; /* Centers the image on the page */
     background-attachment: fixed;
     background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-color: rgba(0, 0, 0, 0.3);  /* Overlay color with transparency */
+    /* background-color: rgba(0, 0, 0, 0.3);  Overlay color with transparency */
     text-align: center;
     min-height: 100vh;
     display: flex;
@@ -55,7 +55,7 @@
 
   h1 {
     font-size: 50px;
-    color: #418978; /* A warm, inviting color */
+    color: #2e5b51; /* A warm, inviting color */
     font-weight: bold;
     margin-top: 0;
   }
@@ -69,7 +69,7 @@
   
   h3 {
     font-size: 30px;
-    color: #418978;
+    color: #2e5b51;
     font-weight: 650;
     margin-top: 30px;
   }
@@ -224,7 +224,7 @@
 
   /* Header Section */
   header  {
-    background-color: #418978;
+    background-color: #2e5b51;
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -310,7 +310,7 @@
 /* Style for service titles */
 .service-item h4 {
   font-size: 24px;
-  color: #418978;
+  color: #2e5b51;
   margin: 0;
 }
 
@@ -337,7 +337,7 @@
 
 
   button {
-    background-color: gray;
+    background-color: #2e5b51;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -349,8 +349,9 @@
   }
 
   button:hover {
-    background-color: #418978;
+    background-color: #2e5b51;
     transform: scale(1.05);
+    transform: translateY(-5px); /* Slight lift effect on hover */
   }
 
   button:focus {
@@ -409,7 +410,7 @@
 
 /* Footer Styles */
 .footer {
-  background-color: #418978;
+  background-color: #2e5b51;
   color: white;
   text-align: center;
   padding: 20px;

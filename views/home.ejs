@@ -20,19 +20,17 @@
                 </div>
                 <% } %>
             </div>           
-            <a href="/services"><button type="submit">See More Detail</button></a>
+            <button onclick="window.location.href='/services';" class="service-button">See More</button>
         </div>
 
         <div class="contact-container">
             <h3>Contact Us</h3>
-            <a href="/contact">
-            <button type="submit">Send Message</button></a>
+            <button onclick="window.location.href='/contact';" class="contact-button">Send Us a Message</button>
         </div>
-
+        
         <div class="appointment-container">
             <h3>Make An Appointment</h3>
-            <a href="/appointments">
-            <button type="submit">Calendar</button></a>
+            <button onclick="window.location.href='/appointments';" class="appointment-button">Check the Calendar</button>
         </div>
 
 <%- include('partials/footer') %>
